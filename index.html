@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>🍌 Banana Clicker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+
+
+  <!-- ⚙️ Botón ajustes -->
+  <button id="openSettings">⚙️</button>
+
+
+  <!-- 🔧 Menú configuración -->
+  <div id="settingsPopup" style="background: rgb(255, 255, 240); border-radius: 12px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); max-width: 400px; border: 1px solid #f0e68c;">
+    <h2 style="color: #8b4513; border-bottom: 2px solid #f0e68c; padding-bottom: 10px; margin-top: 0;">⚙️ Configuración</h2>
+    
+    <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+      <button id="resetGameBtn" 
+        style="background: linear-gradient(to bottom, #ff6b6b, #ff5252); color: white; padding: 10px 15px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; transition: all 0.3s;">
+        🗑️ Reiniciar progreso
+      </button>
+      
+      <button id="closeSettings" 
+        style="background: #facc15; color: #8b4513; padding: 10px 15px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; transition: all 0.3s;">
+        ✕ Cerrar
+      </button>
+    </div>
+
+    <div class="settings-section" style="margin-bottom: 20px;">
+      <h3 style="color: #8b4513; display: flex; align-items: center;">📊 <span style="margin-left: 8px;">Estadísticas</span></h3>
+      <div style="background: rgba(255, 255, 240, 0.7); border-radius: 8px; padding: 12px; border: 1px solid #f0e68c;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div style="display: flex; align-items: center;">🍌 <span style="margin-left: 5px;">Bananas totales:</span></div>
+          <div style="text-align: right; font-weight: bold;" id="totalBananas">0</div>
+          
+          <div style="display: flex; align-items: center;">👆 <span style="margin-left: 5px;">Clics:</span></div>
+          <div style="text-align: right; font-weight: bold;" id="totalClicks">0</div>
+          
+          <div style="display: flex; align-items: center;">⏱ <span style="margin-left: 5px;">Tiempo:</span></div>
+          <div style="text-align: right; font-weight: bold;" id="playTime">0s</div>
+          
+          <div style="display: flex; align-items: center;">🔧 <span style="margin-left: 5px;">Mejoras:</span></div>
+          <div style="text-align: right; font-weight: bold;" id="upgradesBought">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h3 style="color: #8b4513; display: flex; align-items: center;">🏆 <span style="margin-left: 8px;">Logros</span></h3>
+      <div style="background: rgba(255, 255, 240, 0.7); border-radius: 8px; padding: 12px; border: 1px solid #f0e68c; max-height: 200px; overflow-y: auto;">
+        <ul id="achievementList" style="list-style: none; padding: 0; margin: 0;"></ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 🕹️ Juego principal -->
+  <div class="container">
+    <!-- Columna izquierda -->
+    <div class="column left">
+      <h1>🍌 Banana Clicker</h1>
+      <div class="score">Bananas: <span id="score">0</span></div>
+      <div class="score">Bananas por segundo: <span id="bananasps">0</span></div>
+      <img id="banana" src="./img/banana.png" alt="Banana">
+
+    <div class="slide">
+      <div id="bananaTips"
+          style="margin-top: 2rem; font-size: 0.85rem; color: #444; background: #fffceb; padding: 1rem; border-radius: 10px;">
+          <h3>💡 Consejo del día</h3>
+          <p id="tipText">Haz clic en la banana para empezar...</p>
+      </div>
+
+      <div id="lorePanel" style="margin-top: 2rem; font-size: 0.85rem; color: #333;  overflow-y: scroll;
+      height: 21vh;">
+        <h3>📖 Crónicas Bananeras</h3>
+        <div id="loreList" class="lore-list"></div>
+      </div>
+    </div>
+  
+
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="column shop">
+      <h2>Tienda de Mejoras</h2>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          👆 Por clic: <span id="clickPower">1</span>
+          <button id="buyClickUpgrade">Comprar - 50 🍌</button>
+        </div>
+        <div class="description">Aumenta las bananas ganadas al hacer clic.</div>
+      </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          ⏱ Por segundo: <span id="bananaPerSecond">0</span>
+          <button id="buyAutoUpgrade">Comprar - 100 🍌</button>
+        </div>
+        <div class="description">Genera 1 banana por segundo automáticamente.</div>
+      </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          🚜 Granjeros: <span id="farmers">0</span>
+          <button id="buyFarmerUpgrade">Comprar - 500 🍌</button>
+        </div>
+        <div class="description">Cada granjero produce 5 bananas por segundo.</div>
+      </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          🌴 Plantaciones: <span id="plantations">0</span>
+          <button id="buyPlantationUpgrade">Comprar - 2000 🍌</button>
+        </div>
+        <div class="description">Cada plantación produce 20 bananas por segundo.</div>
+      </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          🏭 Factorias: <span id="factorys">0</span>
+          <button id="buyFactoryUpgrade">Comprar - 10000 🍌</button>
+        </div>
+        <div class="description">Cada fábrica produce 100 bananas por segundo.</div>
+      </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          💥 Multiplicador x<span id="globalMultiplier">1</span>
+          <button id="buyMultiplierUpgrade">Comprar - 5000 🍌</button>
+        </div>
+        <div class="description">Duplica todas las bananas generadas.</div>
+      </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          ⏳ Distorsión temporal: <span id="timeWarpers">0</span>
+          <button id="buyTimeWarperUpgrade">Comprar - 25000 🍌</button>
+        </div>
+        <div class="description">Aumenta la producción en un 50% por cada distorsión.</div>
+      </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          🏆 Banana Dorada: <span id="goldenBananas">0</span>
+          <button id="buyGoldenBananaUpgrade">Comprar - 100000 🍌</button>
+        </div>
+        <div class="description">Duplica el poder de tus clics permanentemente.</div>
+      </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          🍌 Dios del Plátano: <span id="bananaGods">0</span>
+          <button id="buyBananaGodUpgrade">Comprar - 500000 🍌</button>
+        </div>
+        <div class="description">Multiplica por 5 toda tu producción automática.</div>
+      </div>
+    </div>
+  </div>
+
+<script src="./js/main.js"></script>
+
+</body>
+
+</html>
