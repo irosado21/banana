@@ -9,6 +9,7 @@ document.getElementById("resetGameBtn").addEventListener("click", () => {
       game.bananaPerSecond = 0;
 
       game.clickPower = 1;
+      game.monkeys = 0;
       game.farmers = 0;
       game.plantations = 0;
       game.factorys = 0;
@@ -148,6 +149,7 @@ document.getElementById("resetGameBtn").addEventListener("click", () => {
       bananaPerSecond: 0,
 
       clickPower: 1,
+      monkeys: 0,
       farmers: 0,
       plantations: 0,
       factorys: 0,
@@ -195,7 +197,8 @@ document.getElementById("resetGameBtn").addEventListener("click", () => {
       updateDisplay() {
         document.getElementById("score").textContent = Math.floor(this.bananas);
       document.getElementById("clickPower").textContent = this.clickPower;
-      document.getElementById("bananaPerSecond").textContent = this.bananaPerSecond;
+      // document.getElementById("bananaPerSecond").textContent = this.bananaPerSecond;
+      document.getElementById("monkey").textContent = this.monkeys;
       document.getElementById("farmers").textContent = this.farmers;
       document.getElementById("plantations").textContent = this.plantations;
       document.getElementById("factorys").textContent = this.factorys;
@@ -251,6 +254,7 @@ document.getElementById("resetGameBtn").addEventListener("click", () => {
       buyAutoUpgrade() {
         if (this.bananas >= this.autoUpgradeCost) {
           this.bananas -= this.autoUpgradeCost;
+          this.monkeys += 1;
           this.bananaPerSecond += 1;
           this.autoUpgradeCost = Math.floor(this.autoUpgradeCost * 1.4);
           this.updateDisplay();
