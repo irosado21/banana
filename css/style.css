@@ -89,6 +89,9 @@
 
     .left {
       border-bottom: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     @media (min-width: 768px) {
