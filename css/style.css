@@ -13,6 +13,7 @@
       padding: 1rem;
       user-select: none;
       overflow: auto;
+      overflow-x: hidden+;
     }
     
     @media (max-width: 767px) {
@@ -110,7 +111,7 @@
     }
 
     #banana {
-      width: 450px;
+      width: auto;
       height: 450px;
       cursor: pointer;
       transition: transform 0.1s ease;
