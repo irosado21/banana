@@ -117,6 +117,9 @@
       display: block;
       margin: 1rem auto;
       user-select: none;
+      background-image: url(../img/banana.png);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
     #banana:active {
