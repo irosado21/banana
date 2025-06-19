@@ -12,7 +12,17 @@
       align-items: start;
       padding: 1rem;
       user-select: none;
-      overflow: hidden;
+      overflow: auto;
+    }
+    
+    @media (max-width: 767px) {
+      body {
+        overflow: auto;
+      }
+      
+      .container {
+        overflow: auto;
+      }
     }
     
     /* Ocultar scrollbars pero mantener funcionalidad */
@@ -34,7 +44,7 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       max-width: 1000px;
       width: 100%;
-      overflow: hidden;
+      overflow: auto;
       position: relative;
     }
 
@@ -174,6 +184,25 @@
       z-index: 100;
       display: none;
       text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+    
+    @media (max-width: 480px) {
+      #settingsPopup {
+        width: 95%;
+        padding: 1rem;
+        font-size: 1.1rem;
+      }
+      
+      #settingsPopup h2 {
+        font-size: 1.5rem;
+      }
+      
+      #settingsPopup button {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+      }
     }
 
     .lore-entry {
