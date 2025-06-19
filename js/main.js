@@ -1,3 +1,7 @@
+// Establece tema dark por defecto si no está definido
+if (!document.body.hasAttribute('data-theme')) {
+  document.body.setAttribute('data-theme', 'dark');
+}
 
 document.getElementById("resetGameBtn").addEventListener("click", () => {
 
@@ -594,7 +598,7 @@ document.getElementById("resetGameBtn").addEventListener("click", () => {
     //   saveSettings();
     // });
 
-    loadSettings();
+    // loadSettings();
 
     setInterval(() => {
       game.playTimeSeconds++;

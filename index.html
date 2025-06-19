@@ -18,8 +18,8 @@
 
 
   <!-- 🔧 Menú configuración -->
-  <div id="settingsPopup" style="background: rgb(255, 255, 240); border-radius: 12px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); max-width: 690px; border: 1px solid #f0e68c;">
-    <h2 style="color: #8b4513; border-bottom: 2px solid #f0e68c; padding-bottom: 10px; margin-top: 0;">⚙️ Configuración</h2>
+  <div id="settingsPopup" style="max-width: 690px; ">
+    <h2 class="settingsTitle">⚙️ Configuración</h2>
     
     <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
       <button id="resetGameBtn" 
@@ -34,8 +34,8 @@
     </div>
 
     <div class="settings-section" style="margin-bottom: 20px;">
-      <h3 style="color: #8b4513; display: flex; align-items: center;">📊 <span style="margin-left: 8px;">Estadísticas</span></h3>
-      <div style="background: rgba(255, 255, 240, 0.7); border-radius: 8px; padding: 12px; border: 1px solid #f0e68c;">
+      <h3 class="settingsTitle">📊 <span style="margin-left: 8px;">Estadísticas</span></h3>
+      <div class="settingsContainer">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
           <div style="display: flex; align-items: center;">🍌 <span style="margin-left: 5px;">Bananas totales:</span></div>
           <div style="text-align: right; font-weight: bold;" id="totalBananas">0</div>
@@ -53,15 +53,14 @@
     </div>
 
     <div class="settings-section">
-      <h3 style="color: #8b4513; display: flex; align-items: center;">🏆 <span style="margin-left: 8px;">Logros</span></h3>
+      <h3 class="settingsTitle">🏆 <span style="margin-left: 8px;">Logros</span></h3>
       <div style="background: rgba(255, 255, 240, 0.7); border-radius: 8px; padding: 12px; border: 1px solid #f0e68c; max-height: 200px; overflow-y: auto;">
         <ul id="achievementList" style="list-style: none; padding: 0; margin: 0;"></ul>
       </div>
     </div>
 
-     <div id="lorePanel" style="margin-top: 2rem; font-size: 0.85rem; color: #333;  overflow-y: scroll;
-      height: 21vh;">
-        <h3>📖 Crónicas Bananeras</h3>
+     <div id="lorePanel" style="margin-top: 2rem; font-size: 0.85rem; overflow-y: scroll; height: 21vh;">
+        <h3 class="settingsTitle">📖 Crónicas Bananeras</h3>
         <div id="loreList" class="lore-list"></div>
       </div>
   </div>
@@ -78,8 +77,7 @@
       <div id="banana"></div>
 
     <div class="slide">
-      <div id="bananaTips"
-          style="margin-top: 2rem; font-size: 0.85rem; color: #444; background: #fffceb; padding: 1rem; border-radius: 10px;">
+      <div id="bananaTips">
           <h3>💡 Consejo del día</h3>
           <p id="tipText">Haz clic en la banana para empezar...</p>
       </div>
