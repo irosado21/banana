@@ -55,9 +55,35 @@
     }
 
     .column {
-      padding: 2rem;
+      padding: 1.5rem;
       flex: 1;
-      min-width: 300px;
+      min-width: 0;
+    }
+    
+    @media (max-width: 480px) {
+      .column {
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 1.5rem;
+      }
+      
+      .score {
+        font-size: 1.2rem;
+      }
+      
+      #banana {
+        width: 180px;
+      }
+      
+      .upgrade {
+        padding: 0.8rem;
+      }
+      
+      button {
+        padding: 0.8rem 1rem;
+      }
     }
 
     .left {
@@ -110,11 +136,15 @@
       margin-bottom: 1rem;
     }
 
+     butt{
+      padding: 20px;
+     }
+
     .upgrade {
       background: #fffbe9;
       border: 1px solid #ffeaa7;
       border-radius: 12px;
-      padding: 1rem;
+      padding:1rem;
       margin-bottom: 1rem;
       font-size: 0.95rem;
     }
@@ -134,7 +164,7 @@
     }
 
     button {
-      padding: 0.4rem 0.8rem;
+      padding: 1rem 1.4rem;
       background: #fcd34d;
       border: none;
       border-radius: 8px;
