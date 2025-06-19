@@ -120,6 +120,15 @@ h1 {
   background-image: url(../img/banana.png);
   background-repeat: no-repeat;
   background-size: cover;
+    /* Tus estilos existentes... */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+    -webkit-tap-highlight-color: transparent; /* Elimina el resaltado azul en móviles */
+    touch-action: manipulation; /* Mejora la respuesta táctil */
 }
 
 #banana:active {
