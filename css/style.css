@@ -36,13 +36,13 @@
     }
 
     .container {
-      margin-top: 10px;
+      /* margin-top: 10px; */
       display: flex;
       flex-direction: column;
       background: white;
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      max-width: 1000px;
+      /* max-width: 1000px; */
       width: 100%;
       overflow: auto;
       position: relative;
@@ -74,7 +74,7 @@
       }
       
       #banana {
-        width: 180px;
+        width: 480px;
       }
       
       .upgrade {
@@ -110,7 +110,8 @@
     }
 
     #banana {
-      width: 250px;
+      width: 450px;
+      height: 450px;
       cursor: pointer;
       transition: transform 0.1s ease;
       display: block;
