@@ -262,13 +262,25 @@ butt{
   font-size: 0.95rem;
 }
 
-.upgrade-header {
+
+body[data-theme="dark"] .upgrade-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
+  color: var( --dark-text-color);
 }
+
+body[data-theme="light"] .upgrade-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color:var( --light-text-color);
+}
+
 
 body[data-theme="dark"] .upgrade {
   background: var(--dark-upgrade-bg);

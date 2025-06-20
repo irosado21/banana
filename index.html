@@ -54,14 +54,15 @@
 
     <div class="settings-section">
       <h3 class="settingsTitle">🏆 <span style="margin-left: 8px;">Logros</span></h3>
-      <div style="background: rgba(255, 255, 240, 0.7); border-radius: 8px; padding: 12px; border: 1px solid #f0e68c; max-height: 200px; overflow-y: auto;">
+      <div style="border-radius: 8px; padding: 12px; border: 1px solid #f0e68c; max-height: 200px; overflow-y: auto;">
         <ul id="achievementList" style="list-style: none; padding: 0; margin: 0;"></ul>
       </div>
     </div>
 
      <div id="lorePanel" style="margin-top: 2rem; font-size: 0.85rem; overflow-y: scroll; height: 21vh;">
-        <h3 class="settingsTitle">📖 Crónicas Bananeras</h3>
+        <h3 class="settingsTitle">📖 Crónicas Bananeras <button id="toggleLore" style="float: right; font-size: 0.8em; padding: 5px 10px;">Leer más</button></h3>
         <div id="loreList" class="lore-list"></div>
+        <div id="fullLore" style="display: none;"></div>
       </div>
   </div>
 
@@ -163,10 +164,62 @@
         </div>
         <div class="description">Multiplica por 5 toda tu producción automática.</div>
       </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          🧪 Laboratorio: <span id="bananaLabs">0</span>
+          <button id="buyBananaLabUpgrade">Comprar - 1000000 🍌</button>
+        </div>
+        <div class="description">Multiplica tu producción por segundo x7.</div>
+      </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          🌀 Portal: <span id="bananaPortals">0</span>
+          <button id="buyBananaPortalUpgrade">Comprar - 2000000 🍌</button>
+        </div>
+        <div class="description">Multiplica el poder de clic x5 y la producción x3.</div>
+      </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          🧬 Clon: <span id="bananaClones">0</span>
+          <button id="buyBananaCloneUpgrade">Comprar - 5000000 🍌</button>
+        </div>
+        <div class="description">Multiplica el multiplicador global x4.</div>
+      </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          🚀 Nave Espacial: <span id="bananaSpaceships">0</span>
+          <button id="buyBananaSpaceshipUpgrade">Comprar - 10000000 🍌</button>
+        </div>
+        <div class="description">Multiplica la producción x10 y el poder de clic x3.</div>
+      </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          🧙‍♂️ Mago: <span id="bananaWizards">0</span>
+          <button id="buyBananaWizardUpgrade">Comprar - 20000000 🍌</button>
+        </div>
+        <div class="description">Multiplica el multiplicador global x8 y la producción x8.</div>
+      </div>
+
+      <div class="upgrade">
+        <div class="upgrade-header">
+          👥 Clon Maestro: <span id="bananaClonesMaster">0</span>
+          <button id="buyBananaCloneMasterUpgrade">Comprar - 50000000 🍌</button>
+        </div>
+        <div class="description">Multiplica el poder de clic x10 y la producción x15.</div>
+      </div>
     </div>
   </div>
 
 <script src="./js/main.js"></script>
+<script src="./js/lore.js"></script>
+<script src="./js/tips.js"></script>
+<script src="./js/achievements.js"></script>
+<script src="./js/reset.js"></script>
 
 </body>
 
